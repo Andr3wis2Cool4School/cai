@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Orderingapp {
 
     static List<Dish> dishlist = new ArrayList<>();
+    static List<Dish> personDish = new ArrayList<>();
 
 
     public static void main(String[] args){
@@ -30,8 +31,18 @@ public class Orderingapp {
             int num = s.nextInt();
             switch (num){
                 case 1:
+                while (true){
                     showDishMenu();
-                    break;
+                    int id = s.nextInt();
+                    if (id == 0){
+                        break;
+                    }
+                    Dish dish = dishlist.get(id - 1);
+                    System.out.println("You have ordered " + dish.name);
+                    personDish.add(dish);
+
+                }    
+                
                 case 2:
                     showPersonDish();
                     break;
@@ -51,7 +62,7 @@ public class Orderingapp {
             System.out.println(dish.id + "\t" + dish.name + "\t" + dish.price);
         }
         System.out.println("---Choose Id to order food && Input 0 go back to main menu---");
-        
+
         
     }
 
