@@ -45,6 +45,13 @@ public class Orderingapp {
     }
 
     public static void showDishMenu(){
+        System.out.println("--Please Ordering Food");
+        for (int i = 0; i < dishlist.size(); i++){
+            Dish dish = dishlist.get(i);
+            System.out.println(dish.id + "\t" + dish.name + "\t" + dish.price);
+        }
+        System.out.println("---Choose Id to order food && Input 0 go back to main menu---");
+        
         
     }
 
