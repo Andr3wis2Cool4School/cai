@@ -42,7 +42,6 @@ public class Orderingapp {
                     personDish.add(dish);
 
                 }    
-                
                 case 2:
                     showPersonDish();
                     break;
@@ -56,7 +55,7 @@ public class Orderingapp {
     }
 
     public static void showDishMenu(){
-        System.out.println("--Please Ordering Food");
+        System.out.println("--Please Ordering Food---");
         for (int i = 0; i < dishlist.size(); i++){
             Dish dish = dishlist.get(i);
             System.out.println(dish.id + "\t" + dish.name + "\t" + dish.price);
@@ -67,11 +66,18 @@ public class Orderingapp {
     }
 
     public static void showPersonDish(){
-
+        System.out.println("---The dish you have ordered---");
+        for (Dish dish : personDish){
+            System.out.println(dish.id + "\t" + dish.name + "\t" + dish.price);
+        }
     }
 
     public static void buy(){
-
+        double total = 0f;
+        for (Dish dish : personDish){
+            total += dish.price;
+        }
+        System.out.println("The price is " + total);
     }
 
     
